@@ -348,10 +348,15 @@ contains
     integer :: glc_nec
     logical :: flds_vslsa
     logical :: flds_vslsc
+    logical :: flds_n2oa
+    logical :: flds_n2oc
+    logical :: flds_nh3a
+    logical :: flds_nh3c
 
     namelist /seq_cplflds_inparm/  &
          flds_co2a, flds_co2b, flds_co2c, flds_co2_dmsa, flds_co2_dmsb, flds_wiso, glc_nec, &
          ice_ncat, seq_flds_i2o_per_cat, flds_bgc_oi, flds_vslsa, flds_vslsc,               &
+         flds_n2oa, flds_n2oc,flds_nh3a, flds_nh3c,
          nan_check_component_fields
 
     ! user specified new fields
@@ -389,6 +394,10 @@ contains
        seq_flds_i2o_per_cat = .false.
        flds_vslsa = .false.
        flds_vslsc = .false.
+       flds_n2oa  = .false.
+       flds_n2oc  = .false.
+       flds_nh3a  = .false.
+       flds_nh3c  = .false.
        nan_check_component_fields = .false.
 
        unitn = shr_file_getUnit()
@@ -418,6 +427,10 @@ contains
     call shr_mpi_bcast(seq_flds_i2o_per_cat, mpicom)
     call shr_mpi_bcast(flds_vslsa   , mpicom)
     call shr_mpi_bcast(flds_vslsc   , mpicom)
+    call shr_mpi_bcast(flds_n2oa    , mpicom)
+    call shr_mpi_bcast(flds_n2oc    , mpicom)
+    call shr_mpi_bcast(flds_nh3a    , mpicom)
+    call shr_mpi_bcast(flds_nh3c    , mpicom)
     call shr_mpi_bcast(nan_check_component_fields, mpicom)
 
     call glc_elevclass_init(glc_nec)
@@ -2562,6 +2575,47 @@ contains
        call metadata_set(attname, longname, stdname, units)
 
     endif
+
+    if (flds_n2oc) then
+
+       call seq_flds_add(a2x_states, "Sa_n2oprog")
+       call seq_flds_add(x2o_states, "Sa_n2oprog")
+       longname = 'Prognostic n2o at the lowest model level'
+       stdname  = ''
+       units    = '1e-12 mol/mol'
+       attname  = 'Sa_n2oprog'
+       call metadata_set(attname, longname, stdname, units)
+
+       call seq_flds_add(o2x_fluxes, "Faoo_fn2o_ocn")
+       call seq_flds_add(x2a_fluxes, "Faoo_fn2o_ocn")
+       longname = 'Surface flux of n2o from ocean'
+       stdname  = 'surface_upward_flux_of_n2o_where_open_sea'
+       units    = 'moles m-2 s-1'
+       attname  = 'Faoo_fn2o_ocn'
+       call metadata_set(attname, longname, stdname, units)
+
+    endif
+
+    if (flds_nh3c) then
+
+       call seq_flds_add(a2x_states, "Sa_nh3prog")
+       call seq_flds_add(x2o_states, "Sa_nh3prog")
+       longname = 'Prognostic nh3 at the lowest model level'
+       stdname  = ''
+       units    = '1e-12 mol/mol'
+       attname  = 'Sa_nh3prog'
+       call metadata_set(attname, longname, stdname, units)
+
+       call seq_flds_add(o2x_fluxes, "Faoo_fnh3_ocn")
+       call seq_flds_add(x2a_fluxes, "Faoo_fnh3_ocn")
+       longname = 'Surface flux of nh3 from ocean'
+       stdname  = 'surface_upward_flux_of_nh3_where_open_sea'
+       units    = 'moles m-2 s-1'
+       attname  = 'Faoo_fnh3_ocn'
+       call metadata_set(attname, longname, stdname, units)
+
+    endif
+
 
     if (flds_wiso) then
        call seq_flds_add(o2x_states, "So_roce_16O")
