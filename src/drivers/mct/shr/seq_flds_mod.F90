@@ -356,7 +356,7 @@ contains
     namelist /seq_cplflds_inparm/  &
          flds_co2a, flds_co2b, flds_co2c, flds_co2_dmsa, flds_co2_dmsb, flds_wiso, glc_nec, &
          ice_ncat, seq_flds_i2o_per_cat, flds_bgc_oi, flds_vslsa, flds_vslsc,               &
-         flds_n2oa, flds_n2oc,flds_nh3a, flds_nh3c,
+         flds_n2oa, flds_n2oc,flds_nh3a, flds_nh3c,                                         &
          nan_check_component_fields
 
     ! user specified new fields
