@@ -121,7 +121,7 @@
       <value>.false.</value>
       <value BGC_MODE="CO2_DMSA">.true.</value>
       <value BGC_MODE="CO2_DMSA_VSLSC">.true.</value>
-      <value BGC_MODE="CO2_DMSA_VSLSC_N2Oc_NH3C">.true.</value>
+      <value BGC_MODE="CO2_DMSA_VSLSC_N2OC_NH3C">.true.</value>
     </values>
   </entry>
 
