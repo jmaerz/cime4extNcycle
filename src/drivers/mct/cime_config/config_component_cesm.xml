@@ -207,7 +207,7 @@
 
     ATMNDEPC: switches on atmospheric (coupled,non-climatological) 
     deposition of NOy and NHx to surface in iHAMOCC/BLOM. Requires
-    noy and nhx deposition fields in CAM namelist.   
+    noy and nhx deposition fields in CAM namelist (ndep_list = 'noy', 'nhx').   
 
     The namelist variables flds_co2a, flds_co2b and flds_co2c are in the
     namelist group cpl_flds_inparm.
