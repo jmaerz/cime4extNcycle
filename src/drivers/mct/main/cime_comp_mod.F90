@@ -458,7 +458,7 @@ module cime_comp_mod
        'Faxa_bcphiwet:Faxa_bcphodry:Faxa_bcphidry:Faxa_ocphiwet:Faxa_ocphidry:&
        &Faxa_ocphodry:Faxa_dstwet1:Faxa_dstdry1:Faxa_dstwet2:Faxa_dstdry2:Faxa_dstwet3:&
        &Faxa_dstdry3:Faxa_dstwet4:Faxa_dstdry4:Sa_co2prog:Sa_co2diag:Sa_brfprog:&
-       &Sa_n2oprog:Sa_nh3prog:Faxa_nhx:Faxa_noy''
+       &Sa_n2oprog:Sa_nh3prog:Faxa_nhx:Faxa_noy'
 
   character(CL) :: hist_a2x1hri_flds = &
        'Faxa_swndr:Faxa_swvdr:Faxa_swndf:Faxa_swvdf'
