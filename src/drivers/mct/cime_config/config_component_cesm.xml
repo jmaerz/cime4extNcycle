@@ -147,7 +147,7 @@
 
   <entry id="CCSM_BGC">
     <type>char</type>
-    <valid_values>none,CO2A,CO2B,CO2C,CO2_DMSA,CO2_DMSB,CO2_DMSA_VSLSC,CO2_DMSB_VSLSC,CO2_DMSA_VSLSC_N2OC_NH3C,CO2_DMSB_VSLSC_N2OC_NH3C</valid_values>
+    <valid_values>none,CO2A,CO2B,CO2C,CO2_DMSA,CO2_DMSB,CO2_DMSA_VSLSC,CO2_DMSB_VSLSC,CO2_DMSA_VSLSC_N2OC_NH3C,CO2_DMSB_VSLSC_N2OC_NH3C,CO2_DMSA_VSLSC_N2OC_NH3C_ATMNDEPC,CO2_DMSB_VSLSC_N2OC_NH3C_ATMNDEPC</valid_values>
     <default_value>none</default_value>
     <values match="last">
       <value compset="_CAM">CO2A</value>
@@ -164,6 +164,8 @@
       <value compset="_BGC%BDRDDMS%VSLSC">CO2_DMSB_VSLSC</value>
       <value compset="_BGC%BPRPDMS%VSLSC%N2OC%NH3C">CO2_DMSA_VSLSC_N2OC_NH3C</value>
       <value compset="_BGC%BDRDDMS%VSLSC%N2OC%NH3C">CO2_DMSB_VSLSC_N2OC_NH3C</value>
+      <value compset="_BGC%BPRPDMS%VSLSC%N2OC%NH3C">CO2_DMSA_VSLSC_N2OC_NH3C_ATMNDEPC</value>
+      <value compset="_BGC%BDRDDMS%VSLSC%N2OC%NH3C">CO2_DMSB_VSLSC_N2OC_NH3C_ATMNDEPC</value>
       <value compset="_BGC%DMS">CO2_DMSB</value>
       <value compset="HIST.*_DATM%(QIA|CRU)">CO2A</value>
       <value compset="RCP.*_DATM%(QIA|CRU)" >CO2A</value>
@@ -202,6 +204,10 @@
     prognostic nh3 at the lowest atm model level to be sent from
     the atmosphere to the ocean, and the surface upward flux of nh3
     to be sent from the open ocean back to the atmosphere.
+
+    ATMNDEPC: switches on atmospheric (coupled,non-climatological) 
+    deposition of NOy and NHx to surface in iHAMOCC/BLOM. Requires
+    noy and nhx deposition fields in CAM namelist (ndep_list = 'noy', 'nhx').   
 
     The namelist variables flds_co2a, flds_co2b and flds_co2c are in the
     namelist group cpl_flds_inparm.
