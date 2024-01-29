@@ -164,8 +164,8 @@
       <value compset="_BGC%BDRDDMS%VSLSC">CO2_DMSB_VSLSC</value>
       <value compset="_BGC%BPRPDMS%VSLSC%N2OC%NH3C">CO2_DMSA_VSLSC_N2OC_NH3C</value>
       <value compset="_BGC%BDRDDMS%VSLSC%N2OC%NH3C">CO2_DMSB_VSLSC_N2OC_NH3C</value>
-      <value compset="_BGC%BPRPDMS%VSLSC%N2OC%NH3C">CO2_DMSA_VSLSC_N2OC_NH3C_ATMNDEPC</value>
-      <value compset="_BGC%BDRDDMS%VSLSC%N2OC%NH3C">CO2_DMSB_VSLSC_N2OC_NH3C_ATMNDEPC</value>
+      <value compset="_BGC%BPRPDMS%VSLSC%N2OC%NH3C%ATMNDEPC">CO2_DMSA_VSLSC_N2OC_NH3C_ATMNDEPC</value>
+      <value compset="_BGC%BDRDDMS%VSLSC%N2OC%NH3C%ATMNDEPC">CO2_DMSB_VSLSC_N2OC_NH3C_ATMNDEPC</value>
       <value compset="_BGC%DMS">CO2_DMSB</value>
       <value compset="HIST.*_DATM%(QIA|CRU)">CO2A</value>
       <value compset="RCP.*_DATM%(QIA|CRU)" >CO2A</value>
